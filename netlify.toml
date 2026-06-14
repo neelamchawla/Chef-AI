@@ -4,7 +4,7 @@
   publish = "dist"
 
 [functions]
-  directory = "netlify/functions"
+  directory = "../functions"
   node_bundler = "esbuild"
   external_node_modules = ["openai"]
 
