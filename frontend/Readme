@@ -1,0 +1,7 @@
+What you need to do
+Commit and push these changes so Netlify redeploys.
+Optional: In Netlify → Site settings → Environment variables, set OPENAI_API_KEY for real AI responses (without it, mock data is used).
+Local preview: Run both:
+npm run dev:server   # terminal 1 — API on :3001
+npm run preview --prefix frontend   # terminal 2 — after build
+After redeploy, submitting the planner form on Netlify should hit the function instead of returning a 404.
