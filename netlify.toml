@@ -1,7 +1,19 @@
 [build]
   base = "frontend"
-  command = "npm ci && npm run build"
+  command = "npm ci --prefix ../functions && npm ci && npm run build"
   publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = ["openai"]
+
+# Proxy API requests to the serverless Express handler
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+  force = true
 
 # SPA fallback for React Router client-side routes
 [[redirects]]
